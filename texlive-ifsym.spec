@@ -1,11 +1,11 @@
-# revision 15878
+# revision 24868
 # category Package
 # catalog-ctan /fonts/ifsym
-# catalog-date 2008-04-20 19:53:04 +0200
+# catalog-date 2011-04-10 22:02:30 +0200
 # catalog-license other-free
 # catalog-version undef
 Name:		texlive-ifsym
-Version:	20080420
+Version:	20110410
 Release:	1
 Summary:	A collection of symbols
 Group:		Publishing
@@ -17,10 +17,9 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
-A set of symbol fonts, written in MetaFont, offering
+A set of symbol fonts, written in Metafont, offering
 (respectively) clock-face symbols, geometrical symbols, weather
 symbols, mountaineering symbols, electronic circuit symbols and
 a set of miscellaneous symbols. A LaTeX package is provided,
@@ -28,19 +27,19 @@ that allows the user to load only those symbols needed in a
 document.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -83,7 +82,7 @@ document.
 %{_texmfdistdir}/tex/latex/ifsym/uifgeo.fd
 %{_texmfdistdir}/tex/latex/ifsym/uifsym.fd
 %{_texmfdistdir}/tex/latex/ifsym/uifwea.fd
-%doc %{_texmfdistdir}/doc/fonts/ifsym/ifsym.ps.gz
+%doc %{_texmfdistdir}/doc/fonts/ifsym/ifsym.ps
 %doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
