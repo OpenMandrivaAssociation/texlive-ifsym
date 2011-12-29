@@ -26,16 +26,8 @@ a set of miscellaneous symbols. A LaTeX package is provided,
 that allows the user to load only those symbols needed in a
 document.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -83,7 +75,6 @@ document.
 %{_texmfdistdir}/tex/latex/ifsym/uifsym.fd
 %{_texmfdistdir}/tex/latex/ifsym/uifwea.fd
 %doc %{_texmfdistdir}/doc/fonts/ifsym/ifsym.ps
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -94,5 +85,3 @@ document.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
