@@ -85,3 +85,21 @@ document.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20110410-2
++ Revision: 752725
+- Rebuild to reduce used resources
+
+* Mon Dec 26 2011 Paulo Andrade <pcpa@mandriva.com.br> 20110410-1
++ Revision: 745214
+- texlive-ifsym
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20080420-1
++ Revision: 718703
+- texlive-ifsym
+- texlive-ifsym
+- texlive-ifsym
+- texlive-ifsym
+
