@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-ifsym
 Version:	20110410
-Release:	8
+Release:	9
 Summary:	A collection of symbols
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/ifsym
