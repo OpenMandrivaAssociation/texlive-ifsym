@@ -1,18 +1,12 @@
-# revision 24868
-# category Package
-# catalog-ctan /fonts/ifsym
-# catalog-date 2011-04-10 22:02:30 +0200
-# catalog-license other-free
-# catalog-version undef
 Name:		texlive-ifsym
-Version:	20190228
+Version:	24868
 Release:	1
 Summary:	A collection of symbols
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/ifsym
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifsym.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifsym.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifsym.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifsym.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ that allows the user to load only those symbols needed in a
 document.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -78,28 +72,10 @@ document.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20110410-2
-+ Revision: 752725
-- Rebuild to reduce used resources
-
-* Mon Dec 26 2011 Paulo Andrade <pcpa@mandriva.com.br> 20110410-1
-+ Revision: 745214
-- texlive-ifsym
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20080420-1
-+ Revision: 718703
-- texlive-ifsym
-- texlive-ifsym
-- texlive-ifsym
-- texlive-ifsym
-
