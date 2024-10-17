@@ -3,7 +3,7 @@ Version:	24868
 Release:	2
 Summary:	A collection of symbols
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/ifsym
+URL:		https://www.ctan.org/tex-archive/fonts/ifsym
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifsym.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ifsym.doc.r%{version}.tar.xz
